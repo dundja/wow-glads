@@ -1,0 +1,31 @@
+@import "../scss/variables";
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    div {
+        display: inline-block;
+        padding: 1rem 1.6rem;
+        background-color: $color-secondary;
+        cursor: Pointer;
+        color: #a7aeb6;
+        margin: 0 0.2rem;
+        font-size: 1.2rem;
+    }
+
+    div[disabled] {
+        pointer-events: none;
+    }
+
+    span {
+        color: $color-white;
+        text-align: end;
+    }
+}
+
+// active page class
+.active-page {
+    background-color: $color-tertiary !important;
+}

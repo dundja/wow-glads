@@ -1,0 +1,44 @@
+@import "./variables";
+
+// Breakpoints MediaQuery's
+// Extra small devices
+@mixin xs {
+    @media (max-width: #{$smaller}) {
+        @content;
+    }
+}
+
+// Small devices
+@mixin sm {
+    @media (max-width: #{$small}) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin md {
+    @media (max-width: #{$medium}) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin lg {
+    @media (max-width: #{$large}) {
+        @content;
+    }
+}
+
+// Extra large devices
+@mixin xl {
+    @media (max-width: #{$larger}) {
+        @content;
+    }
+}
+
+// Super extra large devices
+@mixin xxl {
+    @media (max-width: #{$largest}) {
+        @content;
+    }
+}

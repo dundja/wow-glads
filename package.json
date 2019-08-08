@@ -1,0 +1,26 @@
+{
+    "name": "wow-glads-server",
+    "version": "1.0.0",
+    "description": "Server for wow-glads",
+    "main": "server.js",
+    "scripts": {
+        "client-install": "npm install --prefix client",
+        "server": "nodemon server.js",
+        "client": "npm start --prefix ../client",
+        "debug": "nodemon --inspect server.js",
+        "dev": "concurrently \"npm run server\" \"npm run client\""
+    },
+    "author": "Radivoje Dundjerovic",
+    "license": "ISC",
+    "dependencies": {
+        "bluebird": "^3.5.5",
+        "body-parser": "^1.19.0",
+        "concurrently": "^4.1.1",
+        "dotenv": "^8.0.0",
+        "express": "^4.17.1",
+        "request": "^2.88.0",
+        "request-promise-native": "^1.0.7",
+        "simple-oauth2": "^2.2.1",
+        "throng": "^4.0.0"
+    }
+}

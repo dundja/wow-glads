@@ -1,0 +1,85 @@
+@import "../scss/variables";
+
+.ladder {
+    min-height: 100vh;
+
+    &__innerWrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5rem;
+
+        // TOP BOXES
+        &__upperBoxes {
+            display: flex;
+            width: 100%;
+        }
+
+        // MIDDLE BOXES
+        &__middBoxes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem;
+
+            &-totalChars {
+                p {
+                    font-size: 1.6rem;
+                    color: $color-white;
+                }
+            }
+
+            &-pagination {
+                // only temp
+                p {
+                    font-size: 1.6rem;
+                    color: $color-white;
+                }
+            }
+        }
+
+        // CHARACTER BOXES
+        &__characterBoxes {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            &-header {
+                // asd
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.6rem;
+                padding: 1rem;
+                &--rank {
+                    color: $color-white;
+                    flex: 20%;
+                    margin-left: 2rem;
+                }
+
+                &--nameRealm {
+                    color: $color-white;
+                    flex: 60%;
+                }
+
+                &--brackets {
+                    flex: 20%;
+                    margin-right: 4rem;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    span {
+                        color: $color-tertiary;
+                        margin: 0 2.8rem;
+                        font-weight: 600;
+                        min-width: 3.7rem;
+                    }
+                }
+            }
+        }
+    }
+}

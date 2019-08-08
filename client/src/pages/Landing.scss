@@ -1,0 +1,101 @@
+@import "../scss/variables";
+
+.landing {
+    // 8rem navigation height + 10rem marginTop from frombox
+    min-height: calc(100vh - 18rem);
+
+    &__formbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10rem;
+        &-header {
+            color: $color-white;
+            font-size: 2.4rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__formWrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+
+            &-input {
+                background: transparent;
+                border: 2px solid $color-tertiary;
+                border-radius: 0.5rem;
+                outline: none;
+                height: 4rem;
+                width: 20rem;
+                padding: 1rem;
+                color: $color-white;
+                font-size: 1.6rem;
+            }
+
+            &-button {
+                border: none;
+                outline: none;
+                background-color: $color-tertiary;
+                font-size: 1.6rem;
+                color: $color-white;
+                width: 50%;
+                height: 3rem;
+                border-radius: 0.5rem;
+
+                &:disabled {
+                    background-color: darken($color-tertiary, 20);
+                    cursor: wait;
+                }
+            }
+        }
+    }
+
+    &__charsFound {
+        margin: 3rem auto;
+        text-align: center;
+        font-size: 1.6rem;
+        color: $color-white;
+
+        span {
+            font-size: 1.6rem;
+            color: $color-white;
+        }
+    }
+}
+
+// helper
+.react-select__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20rem !important;
+}
+.react-select__control {
+    border: 2px solid $color-tertiary !important;
+    width: 100%;
+}
+
+// pulsing
+.pulsate {
+    animation: opacityPulse 1.5s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 1;
+}
+@keyframes opacityPulse {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.4;
+    }
+}

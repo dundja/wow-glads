@@ -1,0 +1,144 @@
+@import "../scss/variables";
+
+.character {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 100%;
+
+    &__box {
+        display: flex;
+        align-items: center;
+        background-color: $color-secondary;
+        margin: 0.5rem auto;
+        padding: 2rem;
+        width: 100%;
+        border-radius: 0.5rem;
+        font-size: 1.6rem;
+        color: $color-white;
+
+        &-rank {
+            flex: 10%;
+            margin-left: 3rem;
+        }
+
+        &-nameRealm {
+            flex: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            &-factionImg {
+                width: 4.5rem;
+                height: 4.5rem;
+            }
+
+            &-avatarImg {
+                width: 5rem;
+                height: 5rem;
+                border: 2px solid $color-white;
+            }
+
+            &-text {
+                width: 14rem;
+                &--name {
+                    text-decoration: none;
+                }
+                &--guild {
+                    font-weight: 400;
+                    color: $color-gold;
+                    font-size: 1.4rem;
+                }
+            }
+
+            p {
+                color: $color-gold;
+            }
+        }
+        // select all children
+        &-nameRealm > * {
+            margin-right: 2rem;
+        }
+
+        &-brackets {
+            flex: 20%;
+            margin-right: 3rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            & > * {
+                margin: 0 3rem;
+                min-width: 3.7rem;
+                text-align: center;
+            }
+        }
+    }
+
+    &__noFound {
+        font-size: 1.8rem;
+        color: $color-white;
+        margin-top: 3rem;
+    }
+}
+
+// class colors
+.warrior {
+    color: #c69b6d;
+    border-color: #c69b6d;
+}
+
+.paladin {
+    color: #f48cba;
+    border-color: #f48cba;
+}
+
+.hunter {
+    color: #aad372;
+    border-color: #aad372;
+}
+
+.rogue {
+    color: #fff468;
+    border-color: #fff468;
+}
+
+.preist {
+    color: #f0ebe0;
+    border-color: #f0ebe0;
+}
+
+.death-knight {
+    color: #c41e3b;
+    border-color: #c41e3b;
+}
+
+.shaman {
+    color: #2359ff;
+    border-color: #2359ff;
+}
+
+.mage {
+    color: #68ccef;
+    border-color: #68ccef;
+}
+
+.warlock {
+    color: #9382c9;
+    border-color: #9382c9;
+}
+
+.monk {
+    color: #00ffba;
+    border-color: #00ffba;
+}
+
+.druid {
+    color: #ff7c0a;
+    border-color: #ff7c0a;
+}
+
+.demon-hunter {
+    color: #a330c9;
+    border-color: #a330c9;
+}

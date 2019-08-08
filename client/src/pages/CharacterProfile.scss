@@ -1,0 +1,281 @@
+@import "../scss/variables";
+
+.profile {
+    min-height: 100vh;
+
+    &__inner {
+        margin-top: 10%;
+        position: relative;
+        padding: 3rem;
+        height: 93.5rem;
+        z-index: 10;
+
+        & > * {
+            margin-bottom: 3rem;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 93.5rem;
+
+        &::before {
+            content: "";
+            display: block;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #201e217d;
+        }
+    }
+
+    &__header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-left {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex: 80%;
+            img {
+                width: 9rem;
+                height: 9rem;
+                border: 2px solid;
+            }
+
+            &--text {
+                margin-left: 2rem;
+                h3 {
+                    font-size: 1.8rem;
+                }
+                p {
+                    color: $color-white;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        &-right {
+            flex: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+
+            &--achiv {
+                // asd
+                img {
+                    width: 1rem;
+                    height: 1.25rem;
+                }
+                span {
+                    margin-left: 0.5rem;
+                    color: $color-white;
+                    font-size: 1.8rem;
+                }
+            }
+
+            &--time {
+                img {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                }
+                span {
+                    margin-left: 0.5rem;
+                    color: $color-grey;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+    &__brackets {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-bracket {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 4rem;
+            border-radius: 0.5rem;
+            background: rgba($color-black, 0.5);
+
+            &--raiting {
+                font-size: 1.8rem;
+                color: $color-tertiary;
+            }
+            &--info {
+                font-size: 1.4rem;
+                color: $color-white;
+            }
+        }
+    }
+
+    &__character {
+        // asd
+        h3 {
+            font-size: 1.4rem;
+            color: $color-white;
+            padding: 1.5rem 3rem;
+            border-radius: 0.5rem;
+            background: rgba($color-black, 0.5);
+        }
+        p {
+            font-size: 1.4rem;
+            color: $color-grey;
+            padding: 0rem 3rem;
+            margin: 1rem 0;
+        }
+    }
+
+    &__account {
+        margin-bottom: 0;
+
+        &-inner {
+            padding: 1.5rem 3rem;
+            // margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            // grid-template-rows: repeat(2, 1fr);
+            grid-gap: 3rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: $color-white;
+            padding: 1.5rem 3rem;
+            border-radius: 0.5rem;
+            background: rgba($color-black, 0.5);
+        }
+
+        &-item {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            img {
+                width: 7rem;
+                height: 7rem;
+                border-radius: 0.5rem;
+            }
+
+            &--text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-left: 1rem;
+                h4 {
+                    font-size: 1.7rem;
+                    color: $color-white;
+                }
+                p {
+                    font-size: 1.4rem;
+                    color: $color-grey;
+                }
+            }
+
+            &:nth-child(1) {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+            &:nth-child(2) {
+                grid-column-start: 3;
+                grid-column-end: -1;
+            }
+            &:nth-child(3) {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+            &:nth-child(4) {
+                grid-column-start: 3;
+                grid-column-end: -1;
+            }
+            &:nth-child(5) {
+                grid-column-start: 2;
+                grid-column-end: 4;
+            }
+        }
+    }
+}
+
+// HELPERS
+// class colors
+.warrior {
+    color: #c69b6d;
+    border-color: #c69b6d;
+}
+
+.paladin {
+    color: #f48cba;
+    border-color: #f48cba;
+}
+
+.hunter {
+    color: #aad372;
+    border-color: #aad372;
+}
+
+.rogue {
+    color: #fff468;
+    border-color: #fff468;
+}
+
+.preist {
+    color: #f0ebe0;
+    border-color: #f0ebe0;
+}
+
+.death-knight {
+    color: #c41e3b;
+    border-color: #c41e3b;
+}
+
+.shaman {
+    color: #2359ff;
+    border-color: #2359ff;
+}
+
+.mage {
+    color: #68ccef;
+    border-color: #68ccef;
+}
+
+.warlock {
+    color: #9382c9;
+    border-color: #9382c9;
+}
+
+.monk {
+    color: #00ffba;
+    border-color: #00ffba;
+}
+
+.druid {
+    color: #ff7c0a;
+    border-color: #ff7c0a;
+}
+
+.demon-hunter {
+    color: #a330c9;
+    border-color: #a330c9;
+}

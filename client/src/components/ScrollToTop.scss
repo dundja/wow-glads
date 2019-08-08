@@ -1,0 +1,51 @@
+@import "../scss/variables";
+
+.myButton {
+    border: none;
+    margin: 3rem auto;
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0.05, $color-secondary),
+        s color-stop(1, $color-secondary)
+    );
+    background: linear-gradient(
+        to bottom,
+        $color-secondary 5%,
+        $color-secondary 100%
+    );
+    background-color: #504e7a;
+    -moz-border-radius: 42px;
+    -webkit-border-radius: 42px;
+    border-radius: 42px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 13px 32px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #504e7a;
+}
+.myButton:hover {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0.05, #504e7a),
+        color-stop(1, #504e7a)
+    );
+    background: -moz-linear-gradient(top, #504e7a 5%, #504e7a 100%);
+    background: -webkit-linear-gradient(top, #504e7a 5%, #504e7a 100%);
+    background: -o-linear-gradient(top, #504e7a 5%, #504e7a 100%);
+    background: -ms-linear-gradient(top, #504e7a 5%, #504e7a 100%);
+    background: linear-gradient(to bottom, #504e7a 5%, #504e7a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#504e7a', endColorstr='#504e7a',GradientType=0);
+    background-color: #504e7a;
+}
+.myButton:active {
+    position: relative;
+    top: 1px;
+}

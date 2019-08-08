@@ -1,0 +1,21 @@
+@import "../scss/variables";
+
+.about {
+    min-height: calc(100vh - 18rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+
+    h1 {
+        color: $color-white;
+        font-size: 2.2rem;
+    }
+
+    p {
+        margin-top: 3rem;
+        line-height: 1.2rem;
+        color: $color-white;
+        font-size: 1.6rem;
+    }
+}
