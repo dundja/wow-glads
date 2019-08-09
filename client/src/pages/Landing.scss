@@ -1,3 +1,4 @@
+@import "../scss/mixins";
 @import "../scss/variables";
 
 .landing {
@@ -27,6 +28,10 @@
                 justify-content: center;
                 align-items: center;
                 margin-bottom: 2rem;
+
+                @include xs {
+                    flex-direction: column;
+                }
             }
 
             &-input {
@@ -39,6 +44,10 @@
                 padding: 1rem;
                 color: $color-white;
                 font-size: 1.6rem;
+
+                @include xs {
+                    margin-bottom: 1.5rem;
+                }
             }
 
             &-button {

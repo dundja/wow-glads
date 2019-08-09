@@ -22,7 +22,6 @@ async function leaderController(req, res) {
     }
 
     try {
-        console.time("LADDER-REQUEST");
         const data = await request.get({
             url: `https://${region}.api.blizzard.com/wow/leaderboard/${bracket}?locale=${locale}`,
             json: true,
@@ -77,7 +76,6 @@ async function leaderController(req, res) {
         };
 
         let charData = await getCharacterData(result.tempData);
-        console.timeEnd("LADDER-REQUEST");
         res.json({
             data: charData,
             totalPages: result.totalPages,

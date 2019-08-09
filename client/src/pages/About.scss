@@ -1,3 +1,4 @@
+@import "../scss/mixins";
 @import "../scss/variables";
 
 .about {
@@ -6,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 10rem;
+    padding: 3rem;
 
     h1 {
         color: $color-white;
@@ -17,5 +19,9 @@
         line-height: 1.2rem;
         color: $color-white;
         font-size: 1.6rem;
+    }
+
+    span {
+        color: $color-tertiary;
     }
 }

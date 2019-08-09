@@ -1,3 +1,4 @@
+@import "../scss/mixins";
 @import "../scss/variables";
 
 .searchBox {
@@ -6,8 +7,18 @@
     justify-content: space-around;
     align-items: center;
 
+    @include md {
+        margin-top: 2rem;
+    }
+
     &__classes {
         display: flex;
+
+        @include md {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
 
         &-box {
             display: flex;
@@ -31,6 +42,11 @@
     &__selects {
         display: flex;
         justify-content: space-around;
+
+        @include md {
+            flex-direction: column;
+            height: 20rem;
+        }
     }
 }
 

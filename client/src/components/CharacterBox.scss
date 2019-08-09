@@ -1,3 +1,4 @@
+@import "../scss/mixins";
 @import "../scss/variables";
 
 .character {
@@ -6,6 +7,10 @@
     justify-content: flex-start;
     align-items: center;
     min-width: 100%;
+
+    @include md {
+        min-width: 80%;
+    }
 
     &__box {
         display: flex;
@@ -18,9 +23,21 @@
         font-size: 1.6rem;
         color: $color-white;
 
+        @include md {
+            flex-direction: column;
+
+            & > * {
+                margin: 0.5rem 0;
+            }
+        }
+
         &-rank {
             flex: 10%;
             margin-left: 3rem;
+
+            @include md {
+                margin-left: 0;
+            }
         }
 
         &-nameRealm {
@@ -67,6 +84,11 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
+
+            @include md {
+                margin-right: 0;
+            }
+
             & > * {
                 margin: 0 3rem;
                 min-width: 3.7rem;

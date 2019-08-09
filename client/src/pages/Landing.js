@@ -9,7 +9,7 @@ import "./Landing.scss";
 import CharacterBox from "../components/CharacterBox";
 import Loader from "../components/Loader";
 
-const Landing = ({ region, location }) => {
+const Landing = ({ region }) => {
     const [input, setInput] = useState("");
     const [realm, setRealm] = useState({ value: "", label: "All realms" });
     const [realms, setRealms] = useState([]);
@@ -44,22 +44,27 @@ const Landing = ({ region, location }) => {
     const handleSubmit = async e => {
         e.preventDefault();
         setCountChar(0);
+        let isMounted = true;
 
         if (!input) {
             alert("Please enter name");
         } else if (realm.value === "") {
             setIsFetching(true);
+            console.log("ALL", isFetching);
             const allCharacters = await getAll(
                 region,
                 realms,
                 input,
                 setCharacter
             );
-            setCharacter(allCharacters);
+            if (isMounted) {
+                setCharacter(allCharacters);
+            }
             setIsFetching(false);
         } else {
             setIsFetching(true);
 
+            console.log("SINGLE", isFetching);
             try {
                 const data = await axios.get("/char", {
                     params: {
@@ -70,14 +75,19 @@ const Landing = ({ region, location }) => {
                     },
                     timeout: 6000
                 });
-                setCharacter([data.data.body]);
+                if (isMounted) {
+                    setCharacter([data.data.body]);
+                }
                 setIsFetching(false);
             } catch (err) {
                 console.log(err);
-                setCharacter({ notFound: "Character not found." });
+                if (isMounted) {
+                    setCharacter({ notFound: "Character not found." });
+                }
                 setIsFetching(false);
             }
         }
+        return () => (isMounted = false);
     };
 
     // fetch all chars

@@ -1,3 +1,4 @@
+@import "../scss/mixins";
 @import "../scss/variables";
 
 .ladder {
@@ -14,6 +15,10 @@
         &__upperBoxes {
             display: flex;
             width: 100%;
+
+            @include md {
+                flex-direction: column-reverse;
+            }
         }
 
         // MIDDLE BOXES
@@ -22,6 +27,14 @@
             justify-content: space-between;
             align-items: center;
             margin: 2rem;
+
+            @include md {
+                flex-direction: column-reverse;
+
+                & > * {
+                    margin: 1rem 0;
+                }
+            }
 
             &-totalChars {
                 p {
@@ -54,6 +67,18 @@
                 align-items: center;
                 font-size: 1.6rem;
                 padding: 1rem;
+                width: 75%;
+
+                @include md {
+                    flex-direction: column;
+                    align-items: center;
+                    width: 40%;
+
+                    & > * {
+                        margin: 0 !important;
+                    }
+                }
+
                 &--rank {
                     color: $color-white;
                     flex: 20%;

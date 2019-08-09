@@ -111,23 +111,31 @@ const CharacterBox = ({ region, characters, fromLanding }) => {
                 <div
                     key={i}
                     className="character__box"
-                    style={{ width: "50%", marginTop: marginOnFirst }}
+                    style={{ width: "45rem", marginTop: marginOnFirst }}
                 >
                     <div className="character__box-nameRealm">
-                        <img
-                            className="character__box-nameRealm-factionImg"
-                            src={factionImg}
-                            alt="faction img"
-                        />
-                        <img
-                            className={`character__box-nameRealm-avatarImg ${classColor}`}
-                            src={avatarImg}
-                            onError={e => {
-                                e.target.src =
-                                    "https://render-us.worldofwarcraft.com/shadow/avatar/1-0.jpg";
+                        <div
+                            style={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center"
                             }}
-                            alt="avatar img"
-                        />
+                        >
+                            <img
+                                className="character__box-nameRealm-factionImg"
+                                src={factionImg}
+                                alt="faction img"
+                            />
+                            <img
+                                className={`character__box-nameRealm-avatarImg ${classColor}`}
+                                src={avatarImg}
+                                onError={e => {
+                                    e.target.src =
+                                        "https://render-us.worldofwarcraft.com/shadow/avatar/1-0.jpg";
+                                }}
+                                alt="avatar img"
+                            />
+                        </div>
                         <div className="character__box-nameRealm-text">
                             <Link
                                 to={`/profile?name=${character.name}&realm=${
