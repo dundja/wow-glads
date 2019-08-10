@@ -52,7 +52,6 @@ async function leaderController(req, res) {
             const charName = encodeURI(char.name.toLowerCase());
             const charRealm = char.realmSlug;
             const locale = region === "eu" ? "en_EU" : "en_US";
-            // https://eu.api.blizzard.com/wow/character/ravencrest/clickzz?fields=pvp%2Cguild&locale=en_EU
             const data = await request.get({
                 url: `https://${region}.api.blizzard.com/wow/character/${charRealm}/${charName}?fields=guild%2Cpvp&locale=${locale}`,
                 json: true,
@@ -60,7 +59,6 @@ async function leaderController(req, res) {
                     Authorization: `Bearer ${token}`
                 }
             });
-            // https://render-eu.worldofwarcraft.com/character/outland/124/81948796-avatar.jpg
             char.thumbnail = `https://render-eu.worldofwarcraft.com/character/${
                 data.thumbnail
             }`;
