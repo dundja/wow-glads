@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.scss";
 
@@ -10,6 +10,14 @@ import About from "./pages/About";
 
 function App() {
     const [region, setRegion] = useState("eu");
+
+    useEffect(() => {
+        if (window.location.pathname === "/profile") {
+            window.location.href = `${
+                process.env.PUBLIC_URL
+            }/?region=${region}`;
+        }
+    }, [region]);
 
     return (
         <div className="App">

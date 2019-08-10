@@ -102,6 +102,7 @@ const CharacterBox = ({ region, characters, fromLanding }) => {
     const renderCharactersFromLanding = () => {
         return characters.map((character, i) => {
             const marginOnFirst = i === 0 ? "8.5rem" : "";
+            const width = window.innerWidth < 500 ? "width90" : "45rem";
             const factionImg = character.faction === 0 ? allianceImg : hordeImg;
             const avatarImg = `https://render-${region}.worldofwarcraft.com/character/${
                 character.thumbnail
@@ -110,8 +111,8 @@ const CharacterBox = ({ region, characters, fromLanding }) => {
             return (
                 <div
                     key={i}
-                    className="character__box"
-                    style={{ width: "45rem", marginTop: marginOnFirst }}
+                    className={`character__box ${width}`}
+                    style={{ marginTop: marginOnFirst }}
                 >
                     <div className="character__box-nameRealm">
                         <div
