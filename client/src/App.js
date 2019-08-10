@@ -35,7 +35,7 @@ function App() {
                 <Route
                     exact
                     path={process.env.PUBLIC_URL + "/about"}
-                    component={props => <About />}
+                    component={About}
                 />
             </Switch>
         </div>
