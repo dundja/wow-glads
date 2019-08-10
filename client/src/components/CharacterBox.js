@@ -153,7 +153,7 @@ const CharacterBox = ({ region, characters, fromLanding }) => {
         });
     };
 
-    if (characters.length === 0 || characters[0].status === "nok") {
+    if (characters.length === 0) {
         return (
             <div className="character">
                 <h1 className="character__noFound">No characters found.</h1>
