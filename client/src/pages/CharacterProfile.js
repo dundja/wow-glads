@@ -28,7 +28,6 @@ const CharacterProfile = ({ location, region }) => {
                         charName: params.name.toLowerCase()
                     }
                 });
-                console.log(profileData.data.charData);
                 if (isMounted) {
                     setProfile(profileData.data.charData);
                     setBrackets([

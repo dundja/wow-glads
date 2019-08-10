@@ -48,10 +48,6 @@ const Ladder = ({ region }) => {
         activePage
     ]);
 
-    useEffect(() => {
-        console.log(characters);
-    }, [characters]);
-
     const renderTableHeader = () => {
         return (
             <div className="ladder__innerWrapper__characterBoxes-header">

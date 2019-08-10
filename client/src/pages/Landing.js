@@ -50,7 +50,6 @@ const Landing = ({ region }) => {
             alert("Please enter name");
         } else if (realm.value === "") {
             setIsFetching(true);
-            console.log("ALL", isFetching);
             const allCharacters = await getAll(
                 region,
                 realms,
@@ -64,7 +63,6 @@ const Landing = ({ region }) => {
         } else {
             setIsFetching(true);
 
-            console.log("SINGLE", isFetching);
             try {
                 const data = await axios.get("/char", {
                     params: {
